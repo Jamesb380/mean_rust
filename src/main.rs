@@ -11,7 +11,14 @@ fn main() {
     println!("Median is {:?}", median(&numeros));
     let mapa = mkmap(numeros);
     println!("The Hash Map is {:?}", mapa);
-    println!("Mode is {:?}", mode(&mapa));
+
+
+    let modi = mode(&mapa);
+
+    match modi{
+        Some(x) => {println!("The mode is {}",x);}
+        None => {println!("The value is null")}
+    }
 }
 
 fn mean(numbers: Vec<usize>) -> usize{
@@ -61,5 +68,6 @@ V:Ord,
     .iter()
     .max_by(|a,b| a.1.cmp(&b.1))
     .map(|(k,_v)|k)
+    
 }
 
